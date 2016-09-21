@@ -1,14 +1,9 @@
 #include "list.h"
 
 void createList(List &L) {
-    /**
-    * FS : first(L) diset Nil
-    */
-    //-------------your code here-------------
-    // NIM : 
-    
+     // NIM : 1301154533
+    first(l) = nil;
 
-    //----------------------------------------
 }
 
 address alokasi(infotype x) {
@@ -37,27 +32,33 @@ void dealokasi(address &P) {
 }
 
 void insertFirst(List &L, address P) {
-    /**
-    * IS : List L mungkin kosong
-    * FS : elemen yang ditunjuk P menjadi elemen pertama pada List L
-    */
-    //-------------your code here-------------
-    // NIM : 
-	
-
-    //----------------------------------------
+    // NIM : 1301154533
+    if(first(l) == nil)
+    {
+        first(l)=p;
+    }
+    else
+    {
+        next(p) = first(l);
+        first(l) = p;
+    }
 }
 
 void insertLast(List &L, address P) {
-    /**
-    * IS : List L mungkin kosong
-    * FS : elemen yang ditunjuk P menjadi elemen terakhir pada List L
-    */
-    //-------------your code here-------------
-    // NIM : 
-    
-	
-    //----------------------------------------
+     // NIM : 1301154533
+    adr q;
+    if (first(l) == nil)
+    {
+        first(l) = p;
+    } else
+    {
+        q = first(l);
+        while(next(q)!= nil)
+        {
+            q = next(q);
+        }
+        next(q) = p;
+    }
 }
 
 address findElm(List L, infotype x) {
