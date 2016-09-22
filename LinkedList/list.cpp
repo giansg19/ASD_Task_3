@@ -22,15 +22,15 @@ address alokasi(infotype x) {
     return P;
 }
 
-void dealokasi(address &P) {
+void dealokasi(address &P)
+{
     /**
     * FS : menghapus elemen yang ditunjuk oleh P (delete)
     */
-    //-------------your code here-------------
-    // NIM : 
 
-	
-    //----------------------------------------
+    // NIM : 1301154169
+
+    delete(p);
 }
 
 void insertFirst(List &L, address P) {
@@ -63,21 +63,36 @@ void insertLast(List &L, address P) {
     }
 }
 
-address findElm(List L, infotype x) {
+address findElm(List L, infotype x)
+{
     /**
     * IS : List L mungkin kosong
     * FS : mengembalikan elemen dengan info.ID = x.ID,
            mengembalikan Nil jika tidak ditemukan
     */
 
+    // NIM : 1301154169
     address P;
-    //-------------your code here-------------
-    // NIM : 
-    
-	
-    //----------------------------------------
+    if (L.first != nil)
+    {
+        P = L.first;
+        while ((info(P) != x) && (next(P) != nil))
+        {
+            P = next (P);
+            if(info(P) == x)
+            {
+                return P;
+            }
+            else
+            {
+                return nil;
+            }
+        }
+    }
+
     return P;
 }
+
 
 void deleteFirst(List &L, address &P) {
     /**
@@ -125,16 +140,40 @@ void deleteLast(List &L, address &P) {
     //----------------------------------------
 }
 
-void printInfo(List L) {
+void printInfo(List L)
+{
     /**
     * FS : menampilkan info seluruh elemen list L
     */
-    //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154169
 
-	
+    if (L.first != nil)
+    {
+        address P = L.first;
+        if (P->next == nil)
+        {
+            cout<< info(P)<<" ";
+        }
+        else
+        {
+            while (P != nil)
+            {
+                cout << info(P)<<" ";
+                P = next (P);
+            }
+
+            cout << endl;
+        }
+    }
+    else
+    {
+        cout << "List Kosong"<<endl;
+    }
+
+
     //----------------------------------------
 }
+
 
 
 void insertAfter(address Prec, address P) {
