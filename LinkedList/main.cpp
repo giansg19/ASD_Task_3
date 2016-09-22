@@ -36,7 +36,7 @@ void mainMenu()
     */
     int pilihan;
     address P1,P2,P;
-    bus busprec;
+    bus busprec,y;
     cout << "======MENU======"<<endl;
     cout <<"1. insert first"<<endl;
     cout <<"2. insert after"<< endl;
@@ -59,16 +59,21 @@ void mainMenu()
     {
         cout << "Masukkan data bus : "<<endl;
         cout << "ID Bus : ";
-        cin >>  bus.id << endl;;
+        cin >>  y.id;
+        cout << endl;
         cout << "Brand Bus : ";
-        cin >> bus.brand<<endl;
+        cin >> y.brand;
+        cout << endl;
         cout << "Tipe Bus : ";
-        cin >> bus.type << endl;
+        cin >> y.type;
+        cout << endl;
         cout << "Plat Bus : ";
-        cin >> bus.plat<<endl;
+        cin >> y.plat;
+        cout << endl;
         cout << "Kapasitas Bus : ";
-        cin >> bus.kapasitas << endl;
-        P1 = alokasi(bus);
+        cin >> y.kapasitas;
+        cout << endl;
+        P1 = alokasi(y);
         insertFirst(L, P1);
         cout << "Data telah berhasil ditambahkan" << endl <<endl;
         break;
@@ -77,19 +82,25 @@ void mainMenu()
     {
         cout << "Masukkan data bus : "<<endl;
         cout << "ID Bus : ";
-        cin >> bus.id << endl;;
+        cin >>  y.id;
+        cout << endl;
         cout << "Brand Bus : ";
-        cin >> bus.brand<<endl;
+        cin >> y.brand;
+        cout << endl;
         cout << "Tipe Bus : ";
-        cin >> bus.type << endl;
+        cin >> y.type;
+        cout << endl;
         cout << "Plat Bus : ";
-        cin >> bus.plat<<endl;
+        cin >> y.plat;
+        cout << endl;
         cout << "Kapasitas Bus : ";
-        cin >> bus.kapasitas << endl;
+        cin >> y.kapasitas;
+        cout << endl;
         cout << "Masukkan setelah ID Bus : ";
-        cin >> busprec<< endl;
-        P2 = findElm(busprec);
-        P1 = alokasi(bus);
+        cin >> busprec.id;
+        cout <<endl;
+        P2 = findElm(L,busprec);
+        P1 = alokasi(y);
         insertAfter(P2,P1);
         cout << "Data telah berhasil ditambahkan" << endl <<endl;
         break;
@@ -98,16 +109,21 @@ void mainMenu()
     {
         cout << "Masukkan data bus : "<<endl;
         cout << "ID Bus : ";
-        cin >> bus.id << endl;;
+        cin >>  y.id;
+        cout << endl;
         cout << "Brand Bus : ";
-        cin >> bus.brand<<endl;
+        cin >> y.brand;
+        cout << endl;
         cout << "Tipe Bus : ";
-        cin >> "bus.type" << endl;
+        cin >> y.type;
+        cout << endl;
         cout << "Plat Bus : ";
-        cin >> bus.plat<<endl;
+        cin >> y.plat;
+        cout << endl;
         cout << "Kapasitas Bus : ";
-        cin >> bus.kapasitas << endl;
-        P1 = alokasi (bus);
+        cin >> y.kapasitas;
+        cout << endl;
+        P1 = alokasi (y);
         insertLast(L, P1);
         cout << "Data telah berhasil ditambahkan" << endl <<endl;
     }
@@ -119,9 +135,9 @@ void mainMenu()
     case 5 :
         {
         cout << "Masukkan data yang ingin dihapus : ";
-        cin >> bus;
-        P2 = findElm(bus);
-        P1 = alokasi(bus);
+        cin >> y.id;
+        P2 = findElm(L,y);
+        P1 = alokasi(x);
         deleteAfter(P1,P2);
         cout << "Data telah berhasil ditambahkan" << endl <<endl;
         }
@@ -142,7 +158,7 @@ void mainMenu()
     case 9 :
         {
             P1 = sentinelSearch(L, x);
-            cout << info(P1) << endl;
+            cout << "data ditemukan" << endl;
         }
     case 0 :
         {
