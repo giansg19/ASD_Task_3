@@ -2,23 +2,20 @@
 
 void createList(List &L) {
      // NIM : 1301154533
-    first(l) = nil;
+    first(L) = nil;
 
 }
 
-address alokasi(infotype x) {
+address alokasi(bus x) {
     /**
     * FS : mengembalikan elemen list baru dengan info = x, next elemen = Nil
     */
 
     address P;
-    //-------------your code here-------------
     // NIM : 1301154667
     address P = new elmlist;
     info(P) = x;
     next(P) = NULL;
-
-    //----------------------------------------
     return P;
 }
 
@@ -35,42 +32,41 @@ void dealokasi(address &P)
 
 void insertFirst(List &L, address P) {
     // NIM : 1301154533
-    if(first(l) == nil)
+    if(first(L) == NULL)
     {
-        first(l)=p;
+        first(L)=p;
     }
     else
     {
-        next(p) = first(l);
-        first(l) = p;
+        next(P) = first(L);
+        first(L) = P;
     }
 }
 
 void insertLast(List &L, address P) {
      // NIM : 1301154533
-    adr q;
-    if (first(l) == nil)
+    adr Q;
+    if (first(L) == NULL)
     {
         first(l) = p;
     } else
     {
-        q = first(l);
-        while(next(q)!= nil)
+        Q = first(L);
+        while(next(Q)!= NULL)
         {
-            q = next(q);
+            Q = next(Q);
         }
-        next(q) = p;
+        next(Q) = P;
     }
 }
 
-address findElm(List L, infotype x)
+address findElm(List L, bus x)
 {
     /**
     * IS : List L mungkin kosong
     * FS : mengembalikan elemen dengan info.ID = x.ID,
            mengembalikan Nil jika tidak ditemukan
     */
-
     // NIM : 1301154169
     address P;
     if (L.first != nil)
@@ -99,7 +95,6 @@ void deleteFirst(List &L, address &P) {
     * IS : List L mungkin kosong
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
-    //-------------your code here-------------
     // NIM : 1301154667
     if (first(L) != NULL){
         P = first(L);
@@ -110,8 +105,6 @@ void deleteFirst(List &L, address &P) {
             next(P) = NULL;
         }
     }
-
-    //----------------------------------------
 }
 
 void deleteLast(List &L, address &P) {
@@ -119,25 +112,19 @@ void deleteLast(List &L, address &P) {
     * IS : List L mungkin kosong
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
-    //-------------your code here-------------
     // NIM : 1301154667
     if(first(L) != NULL){
         address Q = first(L);
-        if(Q->next == NULL){
+        if(next(Q) == NULL){
             first(L) = NULL;
         }else{
             while ((Q->next)->next != NULL){
-                Q = Q->next;
+                Q = next(Q);
             }
-            P = Q->next;
-            Q->next=NULL;
+            P = next(Q);
+            next(Q)=NULL;
             }
     }
-
-
-	
-
-    //----------------------------------------
 }
 
 void printInfo(List L)
@@ -146,7 +133,6 @@ void printInfo(List L)
     * FS : menampilkan info seluruh elemen list L
     */
     // NIM : 1301154169
-
     if (L.first != nil)
     {
         address P = L.first;
@@ -169,9 +155,6 @@ void printInfo(List L)
     {
         cout << "List Kosong"<<endl;
     }
-
-
-    //----------------------------------------
 }
 
 
@@ -182,11 +165,9 @@ void insertAfter(address Prec, address P) {
     * FS : elemen yang ditunjuk P menjadi elemen di belakang elemen yang
     *      ditunjuk pointer Prec
     */
-    //-------------your code here-------------
-    // NIM : 
-
-	
-    //----------------------------------------
+    // NIM :1301154407
+    next(P)=next(Prec);
+    next(Prec)=P;
 
 }
 void deleteAfter(address Prec, address &P) {
@@ -195,10 +176,9 @@ void deleteAfter(address Prec, address &P) {
     * FS : elemen yang berada di belakang elemen Prec dilepas
     *      dan disimpan/ditunjuk oleh P
     */
-    //-------------your code here-------------
-    // NIM : 
-    
-	
-    //----------------------------------------
+    // NIM : 1301154407
+    P = next(Prec);
+    next(Prec) = next(P);
+    next(P) = NULL;
 }
 
