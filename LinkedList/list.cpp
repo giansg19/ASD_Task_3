@@ -13,8 +13,10 @@ address alokasi(infotype x) {
 
     address P;
     //-------------your code here-------------
-    // NIM : 
-
+    // NIM : 1301154667
+    address P = new elmlist;
+    info(P) = x;
+    next(P) = NULL;
 
     //----------------------------------------
     return P;
@@ -83,10 +85,17 @@ void deleteFirst(List &L, address &P) {
     * FS : elemen pertama di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154667
+    if (first(L) != NULL){
+        P = first(L);
+        if (next(P) == NULL){
+            first(L) = NULL;
+        } else{
+            first(L) = next(P);
+            next(P) = NULL;
+        }
+    }
 
-	
-	
     //----------------------------------------
 }
 
@@ -96,7 +105,20 @@ void deleteLast(List &L, address &P) {
     * FS : elemen tarakhir di dalam List L dilepas dan disimpan/ditunjuk oleh P
     */
     //-------------your code here-------------
-    // NIM : 
+    // NIM : 1301154667
+    if(first(L) != NULL){
+        address Q = first(L);
+        if(Q->next == NULL){
+            first(L) = NULL;
+        }else{
+            while ((Q->next)->next != NULL){
+                Q = Q->next;
+            }
+            P = Q->next;
+            Q->next=NULL;
+            }
+    }
+
 
 	
 
